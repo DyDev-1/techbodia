@@ -13,10 +13,10 @@
       <p>Independent: {{ country.independent ? "Yes" : "No" }}</p>
       <p>Currency: {{ currencies(country.currencies) }}</p>
       <p>Region: {{ country.region }}</p>
-      <p>Languages: {{ languageData(country.languages) }}</p>
+      <!-- <p>Languages: {{ languageData(country.languages) }}</p>
       <p>latlng: {{ country.latlng.join(", ") }}</p>
       <p>population: {{ country.population}}</p>
-      <p>timezones: {{ country.timezones.join(", ") }}</p>
+      <p>timezones: {{ country.timezones.join(", ") }}</p> -->
       <p>
         Map: 
         <a :href="country.maps.googleMaps" target="_blank">{{ country.maps.googleMaps }}</a>
