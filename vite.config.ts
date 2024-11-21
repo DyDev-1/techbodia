@@ -3,7 +3,7 @@ import vue from '@vitejs/plugin-vue';
 import path from 'path';
 
 export default defineConfig({
-  base: '/deploying-vite-project-example/',
+  base: '/techbodia',
   plugins: [vue()],
   resolve: {
     alias: {

@@ -1,3 +1,4 @@
+/// <reference types="../../node_modules/.vue-global-types/vue_3.5_false.d.ts" />
 const { defineProps, defineSlots, defineEmits, defineExpose, defineModel, defineOptions, withDefaults, } = await import('vue');
 const props = defineProps(["country"]);
 const currencies = (curr) => {
@@ -61,14 +62,6 @@ function __VLS_template() {
     __VLS_elementAsFunction(__VLS_intrinsicElements.p, __VLS_intrinsicElements.p)({});
     (__VLS_ctx.country.region);
     __VLS_elementAsFunction(__VLS_intrinsicElements.p, __VLS_intrinsicElements.p)({});
-    (__VLS_ctx.languageData(__VLS_ctx.country.languages));
-    __VLS_elementAsFunction(__VLS_intrinsicElements.p, __VLS_intrinsicElements.p)({});
-    (__VLS_ctx.country.latlng.join(", "));
-    __VLS_elementAsFunction(__VLS_intrinsicElements.p, __VLS_intrinsicElements.p)({});
-    (__VLS_ctx.country.population);
-    __VLS_elementAsFunction(__VLS_intrinsicElements.p, __VLS_intrinsicElements.p)({});
-    (__VLS_ctx.country.timezones.join(", "));
-    __VLS_elementAsFunction(__VLS_intrinsicElements.p, __VLS_intrinsicElements.p)({});
     __VLS_elementAsFunction(__VLS_intrinsicElements.a, __VLS_intrinsicElements.a)({ href: ((__VLS_ctx.country.maps.googleMaps)), target: ("_blank"), });
     (__VLS_ctx.country.maps.googleMaps);
     __VLS_styleScopedClasses['modal'];
@@ -95,7 +88,6 @@ const __VLS_self = (await import('vue')).defineComponent({
             $props: __VLS_makeOptional(props),
             ...props,
             currencies: currencies,
-            languageData: languageData,
         };
     },
 });

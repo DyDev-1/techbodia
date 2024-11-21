@@ -1,3 +1,4 @@
+/// <reference types="../../node_modules/.vue-global-types/vue_3.5_false.d.ts" />
 import { ref, computed, onMounted } from 'vue';
 import axios from 'axios';
 import Fuse from 'fuse.js';
