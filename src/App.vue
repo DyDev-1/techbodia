@@ -1,5 +1,5 @@
-<script setup lang="ts">
-  import CountriesList from './components/CountriesList.vue'
+<script setup>
+  import CountriesList from '@/components/CountriesList.vue';
 </script>
 
 <template>

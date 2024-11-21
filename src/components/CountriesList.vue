@@ -1,18 +1,18 @@
-<script setup lang="ts">
+<script setup>
 import { ref, computed, onMounted } from 'vue';
 import axios from 'axios';
 import Fuse from 'fuse.js';
-import CountryModal from './ModalCountry.vue';
+import CountryModal from '@/components/ModalCountry.vue';
 
 // State Variables
-const countries = ref<any[]>([]);
+const countries = ref([]);
 const searchQuery = ref('');
 const currentPage = ref(1);
 const rowsPerPage = 25;
-const selectedCountry = ref<any | null>(null);
-const filteredCountries = ref<any[]>([]);
-const fuse = ref<Fuse<any> | null>(null);
-const sortBy = ref<'asc'|'desc'>('asc')
+const selectedCountry = ref(null);
+const filteredCountries = ref([]);
+const fuse = ref(null);
+const sortBy = ref('asc')
 
 // Fetch Countries Data
 const fetchCountries = async () => {
@@ -64,7 +64,7 @@ const nextPage = () => {
 };
 
 // Modal Function
-const showModal = (country: any) => {
+const showModal = (country) => {
   selectedCountry.value = country;
 };
 
@@ -74,14 +74,14 @@ onMounted(fetchCountries);
 
 <template>
   <div class="p-6  min-h-screen">
-    <div class="flex gap-4">  <input
+    <div style="display: flex; flex-flow:row-reverse;">  <input
         v-model="searchQuery"
         type="text"
         placeholder="Search Country"
         class="p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
         @input="searchCountries"
       />
-      <select name="" id="" @change="sortCountries" v-model="sortBy">
+      <select name="" id="" @change="sortCountries" v-model="sortBy" style="margin-right: 10px;">
         <option value="asc">Sort Asc</option>
         <option value="desc">Sort Desc</option>
       </select>
@@ -122,11 +122,6 @@ onMounted(fetchCountries);
           </td>
           <td class="p-2 border">{{ country.cca2 }}</td>
           <td class="p-2 border">{{ country.cca3 }}</td>
-          <td class="p-2 border">
-            <span v-if="country.name.nativeName">
-              {{ Object.values(country.name.nativeName)[0].official }}
-            </span>
-          </td>
           <td class="p-2 border">{{ country.altSpellings.join(', ') }}</td>
           <td class="p-2 border">
             <span v-if="country.idd">
